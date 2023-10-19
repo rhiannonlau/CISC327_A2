@@ -7,12 +7,40 @@
     
     <!-- Link to CSS and JS: -->
     <link rel="stylesheet" href="homepage.css">
-    <script src="homepage.js"></script>
+    <script src="app.js"></script>
     
     <!-- Tab Title: -->
-    <title>Document</title>
+    <title>Project Manager</title>
 </head>
 <body>
-    <button type="button">Create Project</button>
+    <button id="createProjectButton" type="button" onclick="toggleProjectCreation()">Create Project</button>
+
+    <div id = "existingProjects:">
+        <h2>Existing Projects</h2>
+        <ul>
+            <li><a href="url">Project 1</a></li>
+            <li><a href="url">Project 2</a></li>
+            <li><a href="url">Project 3</a></li>
+        </ul>
+    </div>
+
+    <div id="createProjectTab" class="createProject">
+        <h2>Create New Project</h2>
+
+        <p>Please fill out project information:</p>
+
+        <label for="dueDate">Due Date:</label>
+        <input type="text" id="dueDate"><br><br>
+
+        <label for="priority">Priority:</label>
+        <input type="text" id="priority"><br><br>
+
+        <label for="members">Members:</label>
+        <input type="text" id="members"><br><br>
+
+
+        <button type="button">Done</button>
+    </div>
+
 </body>
 </html>
