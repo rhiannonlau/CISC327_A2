@@ -25,3 +25,11 @@ function createProjectLink(){
     newItem.innerHTML = '<a href="projectpage.html">Project new</a>';
     projectList.appendChild(newItem);
 }
+
+function createTaskLink(){
+    let taskList  = document.getElementById('existingTasksList');
+    let newItem = document.createElement('li');
+
+    newItem.innerHTML = '<a href="projectpage.html">Task new</a>  <p>DueDate: ..... Members:  ....</p>';
+    taskList.appendChild(newItem);
+}

@@ -12,19 +12,19 @@
 
 </head>
 <body>
-    <button id="createTaskButton" type="button" onclick="toggleTaskCreation()">Create Project</button>
+    <button id="createTaskButton" type="button" onclick="toggleTaskCreation()">Create Task</button>
 
     <div id = "existingTasks">
         <h2>Existing Tasks</h2>
         <ul id = "existingTasksList">
-            <li><a href="projectpage.html">Task 1</a></li>
-            <li><a href="projectpage.html">Task 2</a></li>
-            <li><a href="projectpage.html">Task 3</a></li>
+            <li><a href="projectpage.html">Task 1</a><p>DueDate: ..... Members:  ....</p></li>
+            <li><a href="projectpage.html">Task 2</a><p>DueDate: ..... Members:  ....</p></li>
+            <li><a href="projectpage.html">Task 3</a><p>DueDate: ..... Members:  ....</p></li>
         </ul>
     </div>
 
     <div id="createTaskTab" class="createTask">
-        <h2>Create New Project</h2>
+        <h2>Create New Task</h2>
         <!-- this is a calendar input system to add a due date to your task. 
             You click the desired date on the calendar to assign it -->
         <form name="dueDate">
@@ -69,7 +69,7 @@
         </form>
 
 
-        <button id="closeCreateProjectButton" type="button" onclick="createProjectLink()">Done</button>
+        <button id="closeCreateProjectButton" type="button" onclick="createTaskLink()">Done</button>
     </div>
 
 </body>
