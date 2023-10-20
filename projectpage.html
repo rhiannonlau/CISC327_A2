@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Project Manager</title>
+
+    <!-- Link to CSS and JS: -->
+    <link rel="stylesheet" href="projectpage.css">
+    <script src="app.js"></script>
+
+</head>
+<body>
+    <button id="createTaskButton" type="button" onclick="toggleTaskCreation()">Create Project</button>
+
+    <div id = "existingTasks">
+        <h2>Existing Tasks</h2>
+        <ul id = "existingTasksList">
+            <li><a href="projectpage.html">Task 1</a></li>
+            <li><a href="projectpage.html">Task 2</a></li>
+            <li><a href="projectpage.html">Task 3</a></li>
+        </ul>
+    </div>
+
+    <div id="createTaskTab" class="createTask">
+        <h2>Create New Project</h2>
+        <!-- this is a calendar input system to add a due date to your task. 
+            You click the desired date on the calendar to assign it -->
+        <form name="dueDate">
+
+            <label for="ddate">Due Date:</label>
+            <input type="date" id="ddate" name="ddate" onClick="dateAssigned()">
+            <br><br>
+
+        </form>
+
+        <p>Choose the priority level for this task</p>
+
+        <!-- use 5 radio buttons to assign a priority to the task.
+        only one radio button can be selected at a time -->
+        <form name="priority">
+
+            <input type="radio" id="1" name="priority" value="1">
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="priority" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="priority" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="priority" value="4">
+            <label for="4">4</label><br>
+            <input type="radio" id="5" name="priority" value="5">
+            <label for="5">5</label><br>
+
+        </form>
+
+        <p>Assign team members to this task</p>
+
+        <!-- use checkboxes to assign multiple team members to a task -->
+        <form name="teamAssign">
+
+            <input type="checkbox" id="member1" name="member1" value="Tom Johnson">
+            <label for=member1>Tom Johnson</label><br>
+            <input type="checkbox" id="member2" name="member2" value="Jim Johnson">
+            <label for=member2>Jim Johnson</label><br>
+            <input type="checkbox" id="member3" name="member3" value="Sarah Smith">
+            <label for=member3>Sarah Smith</label><br><br>
+
+        </form>
+
+
+        <button id="closeCreateProjectButton" type="button" onclick="createProjectLink()">Done</button>
+    </div>
+
+</body>
+</html>
 

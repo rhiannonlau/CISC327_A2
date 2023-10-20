@@ -15,12 +15,12 @@
 <body>
     <button id="createProjectButton" type="button" onclick="toggleProjectCreation()">Create Project</button>
 
-    <div id = "existingProjects:">
+    <div id = "existingProjects">
         <h2>Existing Projects</h2>
-        <ul>
-            <li><a href="url">Project 1</a></li>
-            <li><a href="url">Project 2</a></li>
-            <li><a href="url">Project 3</a></li>
+        <ul id = "existingProjectsList">
+            <li><a href="projectpage.html">Project 1</a></li>
+            <li><a href="projectpage.html">Project 2</a></li>
+            <li><a href="projectpage.html">Project 3</a></li>
         </ul>
     </div>
 
@@ -39,7 +39,7 @@
         <input type="text" id="members"><br><br>
 
 
-        <button id="closeCreateProjectButton" type="button" onclick="toggleProjectCreation()">Done</button>
+        <button id="closeCreateProjectButton" type="button" onclick="createProjectLink()">Done</button>
     </div>
 
 </body>

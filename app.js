@@ -7,3 +7,21 @@ function toggleProjectCreation(){
         document.getElementById('createProjectTab').classList.add('createProject--active')
     }
 }
+
+function toggleTaskCreation(){
+    if (document.getElementById('createTaskTab').classList.contains('createTask--active')){
+        //If setting tab is open, close it
+        document.getElementById('createTaskTab').classList.remove('createTask--active')
+    }else{
+        //Else open it
+        document.getElementById('createTaskTab').classList.add('createTask--active')
+    }
+}
+
+function createProjectLink(){
+    let projectList  = document.getElementById('existingProjectsList');
+    let newItem = document.createElement('li');
+
+    newItem.innerHTML = '<a href="projectpage.html">Project new</a>';
+    projectList.appendChild(newItem);
+}
