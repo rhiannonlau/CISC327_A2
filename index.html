@@ -29,14 +29,21 @@
 
         <p>Please fill out project information:</p>
 
-        <label for="dueDate">Due Date:</label>
-        <input type="text" id="dueDate"><br><br>
+        <label for="title">Title:</label>
+        <input type="text" id="title"><br><br>
+
+        <!-- this is a calendar input system to add a due date to your task. 
+            You click the desired date on the calendar to assign it -->
+        <form name="dueDate">
+
+            <label for="ddate">Due Date:</label>
+            <input type="date" id="ddate" name="ddate" onClick="dateAssigned()">
+            <br><br>
+
+        </form>
 
         <label for="priority">Priority:</label>
         <input type="text" id="priority"><br><br>
-
-        <label for="members">Members:</label>
-        <input type="text" id="members"><br><br>
 
 
         <button id="closeCreateProjectButton" type="button" onclick="createProjectLink()">Done</button>
