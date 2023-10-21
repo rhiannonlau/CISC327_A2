@@ -21,15 +21,17 @@ function toggleTaskCreation(){
 function createProjectLink(title){
     let projectList  = document.getElementById('existingProjectsList');
     let newItem = document.createElement('li');
+    let title = document.getElementById('title');
 
-    newItem.innerHTML = '<a href="projectpage.html" id="title"></a>';
+    newItem.innerHTML = '<a href="projectpage.html">' + title.value + '</a>';
     projectList.appendChild(newItem);
 }
 
 function createTaskLink(){
     let taskList  = document.getElementById('existingTasksList');
     let newItem = document.createElement('li');
+    let title = document.getElementById('title');
 
-    newItem.innerHTML = '<a href="projectpage.html">Task new</a>  <p>DueDate: ..... Members:  ....</p>';
+    newItem.innerHTML = '<a href="projectpage.html">' + title.value + '</a>  <p>Due Date:' + ddate.value + 'Members:  ....</p>';
     taskList.appendChild(newItem);
 }
