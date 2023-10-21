@@ -31,7 +31,9 @@ function createTaskLink(){
     let taskList  = document.getElementById('existingTasksList');
     let newItem = document.createElement('li');
     let title = document.getElementById('title');
+    let title = document.getElementById('dDate');
+    let title = document.getElementById('assignTeam');
 
-    newItem.innerHTML = '<a href="projectpage.html">' + title.value + '</a>  <p>Due Date:' + ddate.value + 'Members:  ....</p>';
+    newItem.innerHTML = '<a href="projectpage.html">' + title.value + '</a>  <p>Due Date:' + dDate.value + 'Members:' + assignTeam.value + '</p>';
     taskList.appendChild(newItem);
 }
