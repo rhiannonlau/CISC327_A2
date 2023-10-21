@@ -18,11 +18,11 @@ function toggleTaskCreation(){
     }
 }
 
-function createProjectLink(){
+function createProjectLink(title){
     let projectList  = document.getElementById('existingProjectsList');
     let newItem = document.createElement('li');
 
-    newItem.innerHTML = '<a href="projectpage.html">Project new</a>';
+    newItem.innerHTML = '<a href="projectpage.html" id="title"></a>';
     projectList.appendChild(newItem);
 }
 
