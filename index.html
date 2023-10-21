@@ -42,8 +42,23 @@
 
         </form>
 
-        <label for="priority">Priority:</label>
-        <input type="text" id="priority"><br><br>
+        <p>Choose a priority level (1 - highest priority, 5 - lowest priority):</p>
+        <!-- use 5 radio buttons to assign a priority to the task.
+        only one radio button can be selected at a time -->
+        <form name="priority">
+
+            <input type="radio" id="1" name="priority" value="1">
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="priority" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="priority" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="priority" value="4">
+            <label for="4">4</label><br>
+            <input type="radio" id="5" name="priority" value="5">
+            <label for="5">5</label><br>
+
+        </form>
 
 
         <button id="closeCreateProjectButton" type="button" onclick="createProjectLink(); toggleProjectCreation();">Done</button>
