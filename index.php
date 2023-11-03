@@ -1,3 +1,21 @@
+<?php
+    //Create query to show all projects in database
+        try {
+            require_once "includes/databaseHandler.inc.php";
+            //Execute prepared SQL Statement:
+            $query = "SELECT projectName, projectDueDate FROM projects;";
+            $statement = $pdo->prepare($query);
+            $statement -> execute();
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            //Close Connection:
+            $pdo = NULL;
+            $statement = NULL;
+        } catch (PDOException $e) {
+            die("Existing Project Query Failed: " . $e->getMessage());
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +35,25 @@
 
     <div id = "existingProjects">
         <h2>Existing Projects</h2>
-        <ul id = "existingProjectsList">
+
+        <?php
+            if(empty($results)){
+                echo "<p>You have no existing projects!</p>";
+            }else{
+                //var_dump($results); //Raw results from query
+                echo "<ul id = 'existingProjectsList'>";
+                foreach($results as $row){
+                    echo "<li>";
+                    echo htmlspecialchars($row["projectName"]);
+                    echo ",  Due: ";
+                    echo htmlspecialchars($row["projectDueDate"]);
+                    echo "</li>";
+                }
+                echo "</ul>";
+            }
+        ?>
+
+        <ul id = 'existingProjectsList'>
             <li><a href="projectpage.html">Project 1</a></li>
             <li><a href="projectpage.html">Project 2</a></li>
             <li><a href="projectpage.html">Project 3</a></li>
@@ -28,6 +64,17 @@
         <h2>Create New Project</h2>
 
         <p>Please fill out project information:</p>
+
+        <form action="includes/projectFormHandler.inc.php" method="post">
+            <label>Name:</label>
+            <input type="text" name="projectName" placehloder="Name">
+            <br><br>
+            <label>DueDate:</label>
+            <input type="date" name="dueDate" onClick="dateAssigned()">
+            <br><br>
+            <button>Create Project</button>
+            <br><br>
+        </form>
 
         <label for="title">Title:</label>
         <input type="text" id="title"><br><br>

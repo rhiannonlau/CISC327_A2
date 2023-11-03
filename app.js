@@ -18,7 +18,7 @@ function toggleTaskCreation(){
     }
 }
 
-function createProjectLink(title){
+function createProjectLink(){
     let projectList  = document.getElementById('existingProjectsList');
     let newItem = document.createElement('li');
     let title = document.getElementById('title');
@@ -31,8 +31,8 @@ function createTaskLink(){
     let taskList  = document.getElementById('existingTasksList');
     let newItem = document.createElement('li');
     let title = document.getElementById('title');
-    let title = document.getElementById('dDate');
-    let title = document.getElementById('assignTeam');
+    let dDate = document.getElementById('dDate');
+    let assignTeam = document.getElementById('assignTeam');
 
     newItem.innerHTML = '<a href="projectpage.html">' + title.value + '</a>  <p>Due Date:' + dDate.value + 'Members:' + assignTeam.value + '</p>';
     taskList.appendChild(newItem);

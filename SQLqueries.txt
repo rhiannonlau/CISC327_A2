@@ -1,0 +1,20 @@
+Create Project Table:
+
+CREATE TABLE projects (
+	projectId int(10) NOT NULL AUTO_INCREMENT,
+	projectName varchar(50) NOT NULL,
+	projectDueDate DATETIME,
+	PRIMARY KEY (projectId)
+);
+
+CREATE TABLE tasks (
+	taskId int(10) NOT NULL AUTO_INCREMENT,
+	projectId int(10) NOT NULL,
+	taskName varchar(50) NOT NULL,
+	taskDueDate DATETIME,
+	taskAssignee TEXT,
+	PRIMARY KEY (taskId),
+	FOREIGN KEY (projectId) REFERENCES projects(projectId) ON DELETE CASCADE
+);
+
+
