@@ -74,6 +74,12 @@
             <label>Assignee:</label>
             <input type="text" name="members">
             <br><br>
+            <label>Priority (1-most urgent, 5-least urgent):</label>
+            <input type="text" name="taskPriority" placeholder="Priority">
+            <br><br>
+            <label>Progress (%):</label>
+            <input type="text" name="taskProgress" placeholder="Progress">
+            <br><br>
             <button>Create Task</button>
             <br><br>
         </form>

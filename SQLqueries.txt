@@ -13,6 +13,8 @@ CREATE TABLE tasks (
 	taskName varchar(50) NOT NULL,
 	taskDueDate DATETIME,
 	taskAssignee TEXT,
+	taskPriority int(1),
+	taskProgress int(3),
 	PRIMARY KEY (taskId),
 	FOREIGN KEY (projectId) REFERENCES projects(projectId) ON DELETE CASCADE
 );
