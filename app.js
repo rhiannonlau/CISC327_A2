@@ -1,3 +1,4 @@
+//Create project and task toggles:
 function toggleProjectCreation(){
     if (document.getElementById('createProjectTab').classList.contains('createProject--active')){
         //If setting tab is open, close it
@@ -16,6 +17,17 @@ function toggleTaskCreation(){
         //Else open it
         document.getElementById('createTaskTab').classList.add('createTask--active')
     }
+}
+
+//Change what project you're viewing:
+let projectView = 0;
+function setProjectView(x){
+    projectView = x;
+    alert(projectView);
+}
+
+function getProjectView(){
+    return x;
 }
 
 function createProjectLink(){

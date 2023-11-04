@@ -1,4 +1,4 @@
-Create Project Table:
+After creating database "cisc327", execute the following queries in the database to create requisite tables
 
 CREATE TABLE projects (
 	projectId int(10) NOT NULL AUTO_INCREMENT,
@@ -17,4 +17,11 @@ CREATE TABLE tasks (
 	FOREIGN KEY (projectId) REFERENCES projects(projectId) ON DELETE CASCADE
 );
 
+CREATE TABLE users (
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        name VARCHAR(30) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        cur_tasks TINYINT(1) NOT NULL DEFAULT 0,
+    PRIMARY KEY(id)
+);
 

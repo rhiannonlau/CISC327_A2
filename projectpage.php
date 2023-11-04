@@ -1,3 +1,21 @@
+<?php
+    //Create query to show all projects in database
+        try {
+            require_once "includes/databaseHandler.inc.php";
+            //Execute prepared SQL Statement:
+            $query = "SELECT * FROM tasks WHERE projectId = 1;";
+            $statement = $pdo->prepare($query);
+            $statement -> execute();
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            //Close Connection:
+            $pdo = NULL;
+            $statement = NULL;
+        } catch (PDOException $e) {
+            die("Existing Tasks Query Failed: " . $e->getMessage());
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,33 +34,55 @@
 
     <div id = "existingTasks">
         <h2>Existing Tasks</h2>
-        <ul id = "existingTasksList">
+
+        <?php
+            if(empty($results)){
+                echo "<p>You have no existing tasks!</p>";
+            }else{
+                //var_dump($results); //Raw results from query
+                echo "<ul id = 'existingTasksList'>";
+                foreach($results as $row){
+                    echo "<li>";
+                    echo htmlspecialchars($row["taskName"]);
+                    echo ",  Due: ";
+                    echo htmlspecialchars($row["taskDueDate"]);
+                    echo ",  Members: ";
+                    echo htmlspecialchars($row["taskAssignee"]);
+                    echo "</li>";
+                }
+                echo "</ul>";
+            }
+        ?>
+
+        <!-- <ul id = "existingTasksList">
             <li><a href="projectpage.html">Task 1</a><p>DueDate: ..... Members:  ....</p></li>
             <li><a href="projectpage.html">Task 2</a><p>DueDate: ..... Members:  ....</p></li>
             <li><a href="projectpage.html">Task 3</a><p>DueDate: ..... Members:  ....</p></li>
-        </ul>
+        </ul> -->
     </div>
 
     <div id="createTaskTab" class="createTask">
         <h2>Create New Task</h2>
 
-        <label for="title">Title:</label>
-        <input type="text" id="title"><br><br>
-        
-        <!-- this is a calendar input system to add a due date to your task. 
-            You click the desired date on the calendar to assign it -->
-        <form id="dDate" name="dueDate">
-
-            <label for="ddate">Due Date:</label>
-            <input type="date" id="ddate" name="ddate" onClick="dateAssigned()">
+        <form action="includes/taskFormHandler.inc.php" method="post">
+            <label>Name:</label>
+            <input type="text" name="taskName" placeholder="Name">
             <br><br>
-
+            <label>DueDate:</label>
+            <input type="date" name="dueDate" onClick="dateAssigned()">
+            <br><br>
+            <label>Assignee:</label>
+            <input type="text" name="members">
+            <br><br>
+            <button>Create Task</button>
+            <br><br>
         </form>
+
+        <!--
 
         <p>Choose the priority level for this task</p>
 
-        <!-- use 5 radio buttons to assign a priority to the task.
-        only one radio button can be selected at a time -->
+
         <form id="priority" name="priority">
 
             <input type="radio" id="1" name="priority" value="1">
@@ -60,7 +100,6 @@
 
         <p>Assign team members to this task</p>
 
-        <!-- use checkboxes to assign multiple team members to a task -->
         <form id="teamAssign" name="teamAssign">
 
             <input type="checkbox" id="member1" name="member1" value="Tom Johnson">
@@ -72,8 +111,10 @@
 
         </form>
 
-
         <button id="closeCreateProjectButton" type="button" onclick="createTaskLink()">Done</button>
+
+        -->
+
     </div>
 
 </body>
