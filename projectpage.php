@@ -30,9 +30,7 @@
 
 </head>
 <body>
-    <button id="createTaskButton" type="button" onclick="toggleTaskCreation()">Create Task</button>
-
-    <div id = "existingTasks">
+    <div class="existingTasks" id = "existingTasks">
         <h2>Existing Tasks</h2>
 
         <?php
@@ -40,7 +38,7 @@
                 echo "<p>You have no existing tasks!</p>";
             }else{
                 //var_dump($results); //Raw results from query
-                echo "<ul id = 'existingTasksList'>";
+                echo "<ul class='no-bullets' id='existingTasksList'>";
                 foreach($results as $row){
                     echo "<li>";
                     echo htmlspecialchars($row["taskName"]);
@@ -48,6 +46,10 @@
                     echo htmlspecialchars($row["taskDueDate"]);
                     echo ",  Members: ";
                     echo htmlspecialchars($row["taskAssignee"]);
+                    echo ",  Priority: ";
+                    echo htmlspecialchars($row["taskPriority"]);
+                    echo ",  Progress: ";
+                    echo htmlspecialchars($row["taskProgress"]);
                     echo "</li>";
                 }
                 echo "</ul>";
@@ -60,6 +62,8 @@
             <li><a href="projectpage.html">Task 3</a><p>DueDate: ..... Members:  ....</p></li>
         </ul> -->
     </div>
+
+    <button id="createTaskButton" class="button" onclick="toggleTaskCreation()">Create Task</button>
 
     <div id="createTaskTab" class="createTask">
         <h2>Create New Task</h2>
