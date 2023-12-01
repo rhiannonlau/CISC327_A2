@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // check if the due date is before the current date, i.e., in the past
-    elseif ($taskDueDate < time('now')) {
+    elseif ($taskDueDate < time()) {
         die("Task due date cannot be before the current date.");
     }
 

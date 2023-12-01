@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // check if the due date is before the current date, i.e., in the past
-    elseif ($projectDueDate < time('now')) {
+    elseif ($projectDueDate < time()) {
         die("Project due date cannot be before the current date.");
     }
 

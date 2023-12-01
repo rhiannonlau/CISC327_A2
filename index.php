@@ -31,9 +31,7 @@
     <title>Project Manager</title>
 </head>
 <body>
-    <button id="createProjectButton" type="button" onclick="toggleProjectCreation()">Create Project</button>
-
-    <div id = "existingProjects">
+    <div class="existingProjects" id = "existingProjects">
         <h2>Existing Projects</h2>
 
         <?php
@@ -41,7 +39,7 @@
                 echo "<p>You have no existing projects!</p>";
             }else{
                 //var_dump($results); //Raw results from query
-                echo "<ul id = 'existingProjectsList'>";
+                echo "<ul class='no-bullets' id = 'existingProjectsList'>";
                 foreach($results as $row){
                     echo "<li><a href='projectpage.php'>";
                     echo htmlspecialchars($row["projectName"]);
@@ -59,6 +57,8 @@
             <li><a href="projectpage.html">Project 3</a></li>
         </ul> -->
     </div>
+
+    <button class="button" id="createProjectButton" onclick="toggleProjectCreation()">Create Project</button>
 
     <div id="createProjectTab" class="createProject">
         <h2>Create New Project</h2>
