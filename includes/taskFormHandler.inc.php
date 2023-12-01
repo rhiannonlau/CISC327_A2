@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         die("Task name cannot be blank.");
     }
 
-    elseif (!isset($taskDueDate)) {
+    if (!isset($taskDueDate)) {
         die("Task due date cannot be blank.");
     }
 
@@ -21,11 +21,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         die("Task due date cannot be before the current date.");
     }
 
-    elseif (!isset($taskAssignee)) {
+    if (!isset($taskAssignee)) {
         die("You must assign at least one member to this task!");
     }
 
-    elseif (!isset($taskPriority)) {
+    if (!isset($taskPriority)) {
         die("Task must have a priority level.");
     }
 
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // check that the progress level is within bounds
-    elseif ($taskProgress < 0) {
+    if ($taskProgress < 0) {
         die("Progress precentage cannot be negative.");
     }
 

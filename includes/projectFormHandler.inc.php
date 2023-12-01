@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         die("Project name cannot be blank.");
     }
 
-    elseif (!isset($projectDueDate)) {
+    if (!isset($projectDueDate)) {
         die("Project due date cannot be blank.");
     }
 
