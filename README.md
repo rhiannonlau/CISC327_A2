@@ -6,5 +6,5 @@ Task management project that allows users to manage their to-do list by creating
   -   Basic block coverage testing
 
 Course: Software Quality Assurance
-Languages: PHP, SQL
+Languages: JavaScript, PHP, CSS, SQL
 Tools: MySQL, Apache, Selenium
